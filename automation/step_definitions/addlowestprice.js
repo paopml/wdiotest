@@ -8,13 +8,9 @@ Given("I open {string}", function(page) {
 
 When("I add the lowest price item", function(){
   shoppingcart.maximizeWindow();
-  shoppingcart.pause();
   shoppingcart.setLowesttoHighest();
-  shoppingcart.pause();
   shoppingcart.addLowestPricedTshirt();
-  shoppingcart.pause();
   shoppingcart.clickCheckout();
-  shoppingcart.pause();
 });
 
 Then("I should checkout successfully",function(){

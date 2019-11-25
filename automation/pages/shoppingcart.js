@@ -1,29 +1,20 @@
 class shoppingcart {
 
-get small() { return $('div:nth-child(3) > label > span');}
-get checkout() { return $('div.buy-btn');}
-get smallSizes() { return $$('(.//div[@class="shelf-item__buy-btn"])');}
+get small() {return browser.react$('t', { label: "S" })}
+get checkout() { return $("//div[contains(text(),'Checkout')]");}
+get smallSizes() { return $$('//div[contains(text(), "Add to cart")]');}
 get dropdown() { return $("div > select");}
 get smallestItem() {return $('div:nth-child(2) > div.shelf-item__buy-btn');}
-get large() { return $('div:nth-child(6) > label > span') };
-
-clickLargeSize(){
-  this.large.click();
-}
-
-clickSmallSize(){
-  this.small.click();
-}
 
 maximizeWindow() {
   browser.maximizeWindow();
 }
-selectSmallSizeItems() {
-  this.smallSizes.map(selectedElement=>selectedElement.click());
+clickSmallSize(){
+  this.small.click();
 }
-
-pause(){
-  browser.pause(5000);
+selectSmallSizeItems() {
+  browser.pause(1000);
+  this.smallSizes.map(selectedElement=>selectedElement.click());
 }
 
 clickCheckout(){
@@ -32,13 +23,12 @@ clickCheckout(){
 acceptAlert(){
   browser.acceptAlert();
 }
-reloadSession(){
-  browser.reloadSession();
-}
+
 setLowesttoHighest(){
   this.dropdown.selectByVisibleText("Lowest to highest");
 }
 addLowestPricedTshirt(){
+  browser.pause(1000);
   this.smallestItem.click();
 }
 }
