@@ -26,6 +26,7 @@ acceptAlert(){
 
 setLowesttoHighest(){
   this.dropdown.selectByVisibleText("Lowest to highest");
+  browser.pause(1000);
 }
 addLowestPricedTshirt(){
   browser.pause(1000);

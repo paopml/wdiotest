@@ -2,7 +2,7 @@ const { Given, When, Then } = require("cucumber");
 const assert = require("assert");
 const shoppingcart = require("../pages/shoppingcart.js");
 
-Given("I open {string}", function(page) {
+Given("I launch {string}", function(page) {
   browser.url(page);
 });
 
