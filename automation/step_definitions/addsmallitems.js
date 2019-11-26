@@ -10,12 +10,10 @@ When("I select all small T-shirts", function(){
   shoppingcart.maximizeWindow();
   shoppingcart.clickSmallSize();
   shoppingcart.selectSmallSizeItems();
-  shoppingcart.clickCheckout();
-
 });
 
 Then("I should checkout successfully",function(){
-  shoppingcart.acceptAlert();
+  shoppingcart.clickCheckout();
 })
 
 
