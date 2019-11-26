@@ -12,7 +12,7 @@ When("I select all small T-shirts", function(){
   shoppingcart.selectSmallSizeItems();
 });
 
-Then("I should checkout successfully",function(){
+Then("I should checkout fine",function(){
   shoppingcart.clickCheckout();
 })
 

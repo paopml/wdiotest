@@ -18,6 +18,7 @@ selectSmallSizeItems() {
 }
 
 clickCheckout(){
+  browser.pause(1000);
   this.checkout.click();
 }
 acceptAlert(){
