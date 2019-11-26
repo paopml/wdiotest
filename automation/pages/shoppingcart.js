@@ -21,6 +21,7 @@ clickCheckout(){
   this.checkout.click();
 }
 acceptAlert(){
+  browser.pause(3000);
   browser.acceptAlert();
 }
 
