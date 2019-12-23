@@ -1,0 +1,6 @@
+host: deloittealm.testrail.io
+email: something
+key: something
+project:
+  name: QE Demo
+  suiteId: 11

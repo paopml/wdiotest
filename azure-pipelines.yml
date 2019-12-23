@@ -1,0 +1,32 @@
+trigger:
+- master
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+steps:
+- task: browserstackcom.browserstack-vsts-extension.browserstack-config-task.BrowserStackConfig@0
+  displayName: 'BrowserStack configuration setup'
+  inputs:
+    BrowserStackServiceEndPoint: browserstack
+
+- task: NodeTool@0
+  displayName: 'Use Node 10.x'
+  inputs:
+    versionSpec: 10.x
+
+- bash: |   
+   npm install
+   node z.js
+   
+  displayName: 'Run tests'
+
+- task: browserstackcom.browserstack-vsts-extension.reports-task.BrowserStackResults@0
+  displayName: 'BrowserStack Results.'
+  continueOnError: true
+
+- task: PublishTestResults@2
+  displayName: 'Publish Test Results **reports/*.xml'
+  inputs:
+    testResultsFiles: '**reports/*.xml'
+
